@@ -1,0 +1,104 @@
+.analysis
+{
+	width: 100%;
+	height: 100%;
+}
+
+.analysis .row
+{
+	width: 100%;
+	height: 100%;
+}
+
+.analysis .row > .sidebar
+{
+	postion: absolute;
+	padding-left: 20px;
+}
+
+.analysis .row > .sidebar > ul
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none inside none;
+}
+
+.analysis .row > .sidebar > ul > li
+{
+	width: 100%;
+    height: 65px;
+}
+
+.analysis .row > .sidebar > ul > li:first-child
+{
+	margin-top: 50px;
+}
+
+.analysis .row > .sidebar > ul > li > .tab-div
+{
+	position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 65px;
+    
+    border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+.analysis .row > .sidebar > ul > li >.tab-div .active
+{
+	background-color: #ffffff;
+    color: #00aff0;
+}
+
+.analysis .row > .sidebar > ul > li > .tab-div > .icon
+{
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.analysis .row > .sidebar > ul > li > .tab-div > .title
+{
+    width: 100%;
+    text-align: center;
+}
+
+.analysis .row > .content
+{
+	margin-top: 10px;
+	margin-right: 20px;
+}
+
+.analysis .row > .content > .title 
+{
+	margin: 10px;
+	height: 60px;
+}
+
+.analysis .row > .content > .title > .back
+{
+	margin-top: 12px;
+	margin-left: 30px;
+	border: 2px solid #00356a;
+	float: left;
+}
+
+.analysis .row > .content > .title > .title-content
+{
+	width: 500px;
+	height: 60px;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 80px;
+	margin-right: 0;
+	
+	line-height: 60px;
+	font-size: 200%;
+}
+
+
