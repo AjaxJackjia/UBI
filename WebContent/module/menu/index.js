@@ -2,7 +2,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 	//load css file
 	util.loadcss('res/css/menu.css');
 	
-	var _appTitle = 'UBI Simulation System';
+	var _appTitle = 'UBI 模拟系统';
 	var _$menu = null;
 	
 	/*
@@ -122,7 +122,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 		 * */
 		var $tileGroup_intro = $('<div class="tile-group double">');
 		var $groupTitle_intro = $('<span class="tile-group-title">');
-		$groupTitle_intro.html('Introduction');
+		$groupTitle_intro.html('基本介绍');
 		var $tileGroupContainer_intro = $('<div class="tile-container">');
 		
 		$tileGroup_intro.append($groupTitle_intro);
@@ -144,11 +144,10 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			tileContent: "image",
 			imageStyle: "imageEffect",
 			imageUrls: [ 
-			             "res/images/menu/1.jpg",
-			             "res/images/menu/2.jpg",
-			             "res/images/menu/3.jpg",
-			             "res/images/menu/4.jpg",
-			             "res/images/menu/5.jpg"
+			             "res/images/menu/introduction_1.jpg",
+			             "res/images/menu/introduction_2.jpg",
+			             "res/images/menu/introduction_3.jpg",
+			             "res/images/menu/introduction_4.jpg"
 			           ]
 		}));
 		
@@ -159,85 +158,31 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "Timeline",
+			tileLabel: "商务创新与计算实验室",
 			tileContent: "icon",
-			iconName: "mif-calendar",
+			iconName: "mif-chrome",
 			
 			//click
 			clickFunc: function() {
-				location.href="index.html?module=introduction&tab=1";
+				location.href="index.html?module=introduction&tab=2";
 			}
 		}));
 		
 		$tileGroupContainer_intro.append(tileUtil.createTile({
 			//tile classes
-			tileSize: "tile-small", 
+			tileSize: "tile", 
 			bgColor: "bg-yellow",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "Tom",
+			tileLabel: " ",
 			tileContent: "image",
 			imageStyle: "image",
-			imageUrl: "res/images/menu/5.jpg",
+			imageUrl: "res/images/menu/prof_jlzhao.jpg",
 				
 			//click
 			clickFunc: function() {
-				location.href="index.html?module=introduction&tab=1";
-			}
-		}));
-		
-		$tileGroupContainer_intro.append(tileUtil.createTile({
-			//tile classes
-			tileSize: "tile-small", 
-			bgColor: "bg-yellow",     
-			fgColor: "fg-white", 
-
-			//tile content
-			tileLabel: "Lucy",
-			tileContent: "image",
-			imageStyle: "image",
-			imageUrl: "res/images/menu/1.jpg",
-				
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=introduction&tab=1";
-			}
-		}));
-		
-		$tileGroupContainer_intro.append(tileUtil.createTile({
-			//tile classes
-			tileSize: "tile-small", 
-			bgColor: "bg-yellow",     
-			fgColor: "fg-white", 
-
-			//tile content
-			tileLabel: "Rose",
-			tileContent: "image",
-			imageStyle: "image",
-			imageUrl: "res/images/menu/2.jpg",
-				
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=introduction&tab=1";
-			}
-		}));
-		
-		$tileGroupContainer_intro.append(tileUtil.createTile({
-			//tile classes
-			tileSize: "tile-small", 
-			bgColor: "bg-yellow",     
-			fgColor: "fg-white", 
-
-			//tile content
-			tileLabel: "Jack",
-			tileContent: "image",
-			imageStyle: "image",
-			imageUrl: "res/images/menu/4.jpg",
-				
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=introduction&tab=1";
+				location.href="index.html?module=introduction&tab=3";
 			}
 		}));
 		
@@ -248,11 +193,11 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "Project Introduction",
+			tileLabel: "UBI项目简介",
 			tileContent: "image",
 			imageStyle: "slideCover",
-			imageUrl: "res/images/menu/4.jpg",
-			coverText: "这是项目简介", 
+			imageUrl: "res/images/menu/ubi_cover.jpg",
+			coverText: "UBI就是Usage Based Insurance，基于驾驶行为而定保费的保险，保费取决于驾驶时间、地点、驾驶方式等综合指标考量，为记录驾驶员的上述行为并关联理赔金额，参加UBI的车主都会在车上安装UBI车载智能盒子。", 
 			coverColor: "op-lightOrange", 
 			slideDirection: "slide-up",
 				
@@ -263,244 +208,175 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 		}));
 		
 		/*
-		 * Insurance Charges tile group
+		 * 动态展示 tile group
 		 * */
-		var $tileGroup_charge = $('<div class="tile-group double">');
-		var $groupTitle_charge = $('<span class="tile-group-title">');
-		$groupTitle_charge.html('Insurance Charges');
-		var $tileGroupContainer_charge = $('<div class="tile-container">');
+		var $tileGroup_dynamic_show = $('<div class="tile-group double">');
+		var $groupTitle_dynamic_show = $('<span class="tile-group-title">');
+		$groupTitle_dynamic_show.html('动态展示');
+		var $tileGroupContainer_dynamic_show = $('<div class="tile-container">');
 		
-		$tileGroup_charge.append($groupTitle_charge);
-		$tileGroup_charge.append($tileGroupContainer_charge);
-		$tileArea.append($tileGroup_charge);
+		$tileGroup_dynamic_show.append($groupTitle_dynamic_show);
+		$tileGroup_dynamic_show.append($tileGroupContainer_dynamic_show);
+		$tileArea.append($tileGroup_dynamic_show);
 		
 		/*
 		 * tile container tiles
 		 * */
-		$tileGroupContainer_charge.append(tileUtil.createTile({
+		$tileGroupContainer_dynamic_show.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile-wide", 
 			bgColor: "bg-cyan",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "charge #1",
+			tileLabel: "演讲",
 			tileContent: "icon",
-			iconName: "mif-paypal", 
+			iconName: "mif-display", 
 				
 			//click
 			clickFunc: function() {
-				location.href="index.html?module=charges&tab=1";
+				location.href="index.html?module=dynamicshow&tab=1";
 			}
 		}));
 		
-		$tileGroupContainer_charge.append(tileUtil.createTile({
+		$tileGroupContainer_dynamic_show.append(tileUtil.createTile({
 			//tile classes
-			tileSize: "tile", 
+			tileSize: "tile-wide", 
 			bgColor: "bg-lightRed",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "charge #2",
+			tileLabel: "问答",
 			tileContent: "icon",
-			iconName: "mif-chart-pie",
-			
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=charges&tab=1";
-			}
-		}));
-		
-		$tileGroupContainer_charge.append(tileUtil.createTile({
-			//tile classes
-			tileSize: "tile", 
-			bgColor: "bg-green",     
-			fgColor: "fg-white", 
-
-			//tile content
-			tileLabel: "charge #3",
-			tileContent: "image",
-			imageStyle: "slideCover",
-			imageUrl: "res/images/menu/2.jpg",
-			coverText: "这是项目简介", 
-			coverColor: "op-lightOrange", 
-			slideDirection: "slide-right-2",
+			iconName: "mif-bubbles", 
 				
 			//click
 			clickFunc: function() {
-				location.href="index.html?module=charges&tab=1";
-			}
-		}));
-		
-		$tileGroupContainer_charge.append(tileUtil.createTile({
-			//tile classes
-			tileSize: "tile", 
-			bgColor: "bg-green",     
-			fgColor: "fg-white", 
-
-			//tile content
-			tileLabel: "charge #4",
-			tileContent: "image",
-			imageStyle: "slideCover",
-			imageUrl: "res/images/menu/3.jpg",
-			coverText: "这是项目简介", 
-			coverColor: "op-lightOrange", 
-			slideDirection: "slide-left-2",
-				
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=charges&tab=1";
-			}
-		}));
-		
-		$tileGroupContainer_charge.append(tileUtil.createTile({
-			//tile classes
-			tileSize: "tile", 
-			bgColor: "bg-cobalt",     
-			fgColor: "fg-white", 
-
-			//tile content
-			tileLabel: "charge #5",
-			tileContent: "icon",
-			iconName: "mif-chart-bars",
-				
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=charges&tab=1";
+				location.href="index.html?module=dynamicshow&tab=2";
 			}
 		}));
 		
 		/*
-		 * Compensation tile group
+		 * Simulation tile group
 		 * */
-		var $tileGroup_cps = $('<div class="tile-group double">');
-		var $groupTitle_cps = $('<span class="tile-group-title">');
-		$groupTitle_cps.html('Compensation');
-		var $tileGroupContainer_cps = $('<div class="tile-container">');
+		var $tileGroup_simu = $('<div class="tile-group double">');
+		var $groupTitle_simu = $('<span class="tile-group-title">');
+		$groupTitle_simu.html('Simulation');
+		var $tileGroupContainer_simu = $('<div class="tile-container">');
 		
-		$tileGroup_cps.append($groupTitle_cps);
-		$tileGroup_cps.append($tileGroupContainer_cps);
-		$tileArea.append($tileGroup_cps);
+		$tileGroup_simu.append($groupTitle_simu);
+		$tileGroup_simu.append($tileGroupContainer_simu);
+		$tileArea.append($tileGroup_simu);
 		
 		/*
 		 * tile container tiles
 		 * */
-		$tileGroupContainer_cps.append(tileUtil.createTile({
+		$tileGroupContainer_simu.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile-wide", 
 			bgColor: "bg-teal",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "Compensation #0",
+			tileLabel: "里程保",
 			tileContent: "icon",
 			iconName: "mif-calculator2", 
 				
 			//click
 			clickFunc: function() {
-				location.href="index.html?module=compensation&tab=1";
+				location.href="index.html?module=simulation&tab=1";
 			}
 		}));
 		
-		$tileGroupContainer_cps.append(tileUtil.createTile({
+		$tileGroupContainer_simu.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile", 
 			bgColor: "bg-green",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "compensation #1",
+			tileLabel: " ",
 			tileContent: "image",
 			imageStyle: "slideCover",
-			imageUrl: "res/images/menu/2.jpg",
-			coverText: "这是项目简介", 
+			imageUrl: "res/images/menu/youjiabao.jpg",
+			coverText: "优驾保, 定制化你的保险优惠策略,为您的车保更加省钱!", 
 			coverColor: "op-lightOrange", 
-			slideDirection: "slide-left-2",
-				
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=compensation&tab=1";
-			}
+			slideDirection: "slide-left-2"
 		}));
 		
-		$tileGroupContainer_cps.append(tileUtil.createTile({
+		$tileGroupContainer_simu.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile", 
 			bgColor: "bg-blue",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "compensation #2",
+			tileLabel: "优驾保",
 			tileContent: "icon",
 			iconName: "mif-chart-line", 
 			
 			//click
 			clickFunc: function() {
-				location.href="index.html?module=compensation&tab=1";
+				location.href="index.html?module=simulation&tab=2";
 			}
 		}));
 		
-		$tileGroupContainer_cps.append(tileUtil.createTile({
-			//tile classes
-			tileSize: "tile", 
-			bgColor: "bg-blue",     
-			fgColor: "fg-white", 
-
-			//tile content
-			tileLabel: "compensation #3",
-			tileContent: "icon",
-			iconName: "mif-chart-dots", 
-				
-			//click
-			clickFunc: function() {
-				location.href="index.html?module=compensation&tab=1";
-			}
-		}));
-		
-		$tileGroupContainer_cps.append(tileUtil.createTile({
+		$tileGroupContainer_simu.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile", 
 			bgColor: "bg-green",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "compensation #4",
-			tileContent: "image",
-			imageStyle: "slideCover",
-			imageUrl: "res/images/menu/2.jpg",
-			coverText: "这是项目简介", 
-			coverColor: "op-lightOrange", 
-			slideDirection: "slide-right-2",
+			tileLabel: "返现保",
+			tileContent: "icon",
+			iconName: "mif-chart-dots", 
 				
 			//click
 			clickFunc: function() {
-				location.href="index.html?module=compensation&tab=1";
+				location.href="index.html?module=simulation&tab=3";
 			}
 		}));
 		
-		/*
-		 * Data Analysis tile group
-		 * */
-		var $tileGroup_da = $('<div class="tile-group double">');
-		var $groupTitle_da = $('<span class="tile-group-title">');
-		$groupTitle_da.html('Data Analysis');
-		var $tileGroupContainer_da = $('<div class="tile-container">');
+		$tileGroupContainer_simu.append(tileUtil.createTile({
+			//tile classes
+			tileSize: "tile", 
+			bgColor: "bg-green",     
+			fgColor: "fg-white", 
+
+			//tile content
+			tileLabel: " ",
+			tileContent: "image",
+			imageStyle: "slideCover",
+			imageUrl: "res/images/menu/fanxianbao.jpg",
+			coverText: "返现保, 开的越好,赚的越多!", 
+			coverColor: "op-lightOrange", 
+			slideDirection: "slide-right-2"
+		}));
 		
-		$tileGroup_da.append($groupTitle_da);
-		$tileGroup_da.append($tileGroupContainer_da);
-		$tileArea.append($tileGroup_da);
+		/*
+		 * 案例展示 tile group
+		 * */
+		var $tileGroup_caseshow = $('<div class="tile-group double">');
+		var $groupTitle_caseshow = $('<span class="tile-group-title">');
+		$groupTitle_caseshow.html('案例展示');
+		var $tileGroupContainer_caseshow = $('<div class="tile-container">');
+		
+		$tileGroup_caseshow.append($groupTitle_caseshow);
+		$tileGroup_caseshow.append($tileGroupContainer_caseshow);
+		$tileArea.append($tileGroup_caseshow);
 		
 		/*
 		 * tile container tiles
 		 * */
-		$tileGroupContainer_da.append(tileUtil.createTile({
+		$tileGroupContainer_caseshow.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile-wide", 
 			bgColor: "bg-red",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "Analysis #1",
+			tileLabel: "案例 #1",
 			tileContent: "icon",
 			iconName: "mif-paper-plane",
 				
@@ -510,16 +386,16 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			}
 		}));
 		
-		$tileGroupContainer_da.append(tileUtil.createTile({
+		$tileGroupContainer_caseshow.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile-wide", 
 			bgColor: "bg-darkBrown",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "Analysis #2",
+			tileLabel: "案例 #2",
 			tileContent: "icon",
-			iconName: "mif-spinner4 mif-ani-spin",
+			iconName: "mif-drive-eta",
 			
 			//click
 			clickFunc: function() {
@@ -527,16 +403,65 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			}
 		}));
 		
-		$tileGroupContainer_da.append(tileUtil.createTile({
+		$tileGroupContainer_caseshow.append(tileUtil.createTile({
 			//tile classes
 			tileSize: "tile-wide", 
 			bgColor: "bg-darkPink",     
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "Analysis #3",
+			tileLabel: "案例 #3",
 			tileContent: "icon",
-			iconName: "mif-calculator",
+			iconName: "mif-location",
+				
+			//click
+			clickFunc: function() {
+				location.href="index.html?module=analysis&tab=1";
+			}
+		}));
+		
+		/*
+		 * UBI使用说明 tile group
+		 * */
+		var $tileGroup_instruction= $('<div class="tile-group double">');
+		var $groupTitle_instruction = $('<span class="tile-group-title">');
+		$groupTitle_instruction.html('UBI使用说明');
+		var $tileGroupContainer_instruction = $('<div class="tile-container">');
+		
+		$tileGroup_instruction.append($groupTitle_instruction);
+		$tileGroup_instruction.append($tileGroupContainer_instruction);
+		$tileArea.append($tileGroup_instruction);
+		
+		/*
+		 * tile container tiles
+		 * */
+		$tileGroupContainer_instruction.append(tileUtil.createTile({
+			//tile classes
+			tileSize: "tile-wide", 
+			bgColor: "bg-teal",     
+			fgColor: "fg-white", 
+
+			//tile content
+			tileLabel: "立即注册",
+			tileContent: "icon",
+			iconName: "mif-user",
+				
+			//click
+			clickFunc: function() {
+				location.href="index.html?module=analysis&tab=1";
+			}
+		}));
+		
+		$tileGroupContainer_instruction.append(tileUtil.createTile({
+			//tile classes
+			tileSize: "tile-wide", 
+			bgColor: "bg-darkCobalt",     
+			fgColor: "fg-white", 
+
+			//tile content
+			tileLabel: "使用方式",
+			tileContent: "icon",
+			iconName: "mif-question",
 				
 			//click
 			clickFunc: function() {

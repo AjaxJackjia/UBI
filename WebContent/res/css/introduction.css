@@ -71,12 +71,14 @@
 {
 	margin-top: 10px;
 	margin-right: 20px;
+	overflow: auto;
 }
 
 .introduction .row > .content > .title 
 {
 	margin: 10px;
 	height: 60px;
+	margin-bottom: 30px;
 }
 
 .introduction .row > .content > .title > .back
@@ -101,4 +103,57 @@
 	font-size: 200%;
 }
 
+.introduction .row > .content > .sub-module 
+{
+	margin: 10px;
+	bottom: 0;
+	padding: 0 30px;
+	
+	color: black;
+}
+
+.introduction .row > .content > .sub-module > p
+{
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.introduction .row > .content > .sub-module > .image-container
+{
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	max-width: 100%;
+	background-color: transparent;
+}
+
+.introduction .row > .content > .sub-module > .image-container .frame
+{
+	background-color: #ffffff;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.introduction .row > .content > .sub-module > .image-container.bordered .frame
+{
+	border: 1px #eeeeee solid;
+	padding: .5rem;
+}
+
+.introduction .row > .content > .sub-module > .staff-introduction > .photo, 
+.introduction .row > .content > .sub-module > .staff-introduction > .title
+{
+	display: inline-block;
+}
+
+.introduction .row > .content > .sub-module > .staff-introduction > .photo
+{
+	width: 150px;
+}
+
+.introduction .row > .content > .sub-module > .staff-bio
+{
+	margin-bottom: 20px;
+}
 

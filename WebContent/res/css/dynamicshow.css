@@ -1,0 +1,184 @@
+.dynamicshow
+{
+	width: 100%;
+	height: 100%;
+}
+
+.dynamicshow .row
+{
+	width: 100%;
+	height: 100%;
+}
+
+.dynamicshow .row > .sidebar
+{
+	postion: absolute;
+	padding-left: 20px;
+}
+
+.dynamicshow .row > .sidebar > ul
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none inside none;
+}
+
+.dynamicshow .row > .sidebar > ul > li
+{
+	width: 100%;
+    height: 65px;
+}
+
+.dynamicshow .row > .sidebar > ul > li:first-child
+{
+	margin-top: 50px;
+}
+
+.dynamicshow .row > .sidebar > ul > li > .tab-div
+{
+	position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 65px;
+    
+    border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+.dynamicshow .row > .sidebar > ul > li >.tab-div .active
+{
+	background-color: #ffffff;
+    color: #00aff0;
+}
+
+.dynamicshow .row > .sidebar > ul > li > .tab-div > .icon
+{
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.dynamicshow .row > .sidebar > ul > li > .tab-div > .title
+{
+    width: 100%;
+    text-align: center;
+}
+
+.dynamicshow .row > .content
+{
+	margin-top: 10px;
+	margin-right: 20px;
+	overflow: auto;
+}
+
+.dynamicshow .row > .content > .title 
+{
+	margin: 10px;
+	height: 60px;
+	margin-bottom: 30px;
+}
+
+.dynamicshow .row > .content > .title > .back
+{
+	margin-top: 12px;
+	margin-left: 30px;
+	border: 2px solid #16499a;
+	float: left;
+}
+
+.dynamicshow .row > .content > .title > .title-content
+{
+	width: 500px;
+	height: 60px;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 80px;
+	margin-right: 0;
+	
+	line-height: 60px;
+	font-size: 200%;
+}
+
+.dynamicshow .row > .content > .sub-module 
+{
+	position: absolute;
+	top: 100px;
+	bottom: 15px;
+	margin: 10px;
+	padding: 0 30px;
+	width: 90%;
+	
+	color: black;
+}
+
+.dynamicshow .row > .content > .sub-module > .ppt-src
+{
+	display: block;
+	padding: 10px;
+	width: 150px;
+}
+
+.dynamicshow .row > .content > .sub-module > #chat_container
+{
+	width: 100%;
+	height: 300px;
+	padding: 10px;
+	border: 1px solid #dedede;
+}
+
+.dynamicshow .row > .content > .sub-module > #chat_container > .message
+{
+	position: relative;
+	width: 100%;
+	margin: 20px 5px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.dynamicshow .row > .content > .sub-module > #chat_container > .message > .message-text
+{
+	display: block;
+	padding: 5px 10px 5px 5px;
+	max-width: 500px;
+	min-height: 1em;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: top;
+	text-align: left;
+	font-size: 14px;
+	white-space: pre-wrap;
+	background-color: #eeeeee;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.dynamicshow .row > .content > .sub-module > #chat_container > .message.self > .message-text
+{
+	float: right;
+	background-color: #42AC3E;
+}
+
+.dynamicshow .row > .content > .sub-module > #chat_container > .message.other > .message-text
+{
+	float: left;
+}
+
+.dynamicshow .row > .content > .sub-module > #send_container
+{
+	width: 100%;
+	margin-top: 10px;
+}
+
+.dynamicshow .row > .content > .sub-module > #send_btn
+{
+	float: right;
+	width: 150px;
+	margin-right: 20px;
+}
+
+

@@ -1,4 +1,9 @@
-define(['jquery', 'common/util', 'common/mod_util'], function($, util, mod_util) {
+define(['jquery', 
+        'common/util', 
+        'common/mod_util',
+        'introduction/introduction_tab1',
+        'introduction/introduction_tab2',
+        'introduction/introduction_tab3'], function($, util, mod_util, IntroductionTab1, IntroductionTab2, IntroductionTab3) {
 	//load css file
 	util.loadcss('res/css/introduction.css');
 	
@@ -6,7 +11,7 @@ define(['jquery', 'common/util', 'common/mod_util'], function($, util, mod_util)
 	var _$moduleContainer = null;
 	
 	var init = function(p_params) {
-		params = p_params;
+		_params = p_params;
 		
 		if(_$moduleContainer === null) {
 			_$moduleContainer = _createModuleContainer();
@@ -27,7 +32,7 @@ define(['jquery', 'common/util', 'common/mod_util'], function($, util, mod_util)
 	 * */
 	var _moduleLoading = function() {
 		if(_$moduleContainer !== null) {
-			_$moduleContainer.fadeIn();
+			_$moduleContainer.show();
 		}
 	};
 	
@@ -47,53 +52,47 @@ define(['jquery', 'common/util', 'common/mod_util'], function($, util, mod_util)
 		 * */
 		var options = {};
 		options.moduleName = 'introduction';
-		options.moduleContentTitle = 'UBI - Introduction';
+		options.moduleContentTitle = 'UBI 模拟系统 - 基本介绍';
 		options.moduleColor = 'darkBlue';
 		options.tabs = [];
 		var tab1 = {
-			icon: 'mif-cloud',
-			title: 'cloud',
+			icon: '',
+			title: '项目介绍',
 			callback: function() {
-				console.log('This is tab1!');
+				//清空内容
+				$('.sub-module').html("");
+				//填充此tab需要初始化的内容
+				IntroductionTab1.init();
 			}
 		};
 		var tab2 = {
-			icon: 'mif-cloud',
-			title: 'cloud',
+			icon: '',
+			title: '实验室',
 			callback: function() {
-				console.log('This is tab2!');
+				//清空内容
+				$('.sub-module').html("");
+				//填充此tab需要初始化的内容
+				IntroductionTab2.init();
 			}
 		};
 		var tab3 = {
-			icon: 'mif-cloud',
-			title: 'cloud',
+			icon: '',
+			title: '人员',
 			callback: function() {
-				console.log('This is tab3!');
+				//清空内容
+				$('.sub-module').html("");
+				//填充此tab需要初始化的内容
+				IntroductionTab3.init();
 			}
 		};
-		var tab4 = {
-			icon: 'mif-cloud',
-			title: 'cloud',
-			callback: function() {
-				console.log('This is tab4!');
-			}
-		};
-		var tab5 = {
-			icon: 'mif-cloud',
-			title: 'cloud',
-			callback: function() {
-				console.log('This is tab5!');
-			}
-		};
+
 		options.tabs.push(tab1);
 		options.tabs.push(tab2);
 		options.tabs.push(tab3);
-		options.tabs.push(tab4);
-		options.tabs.push(tab5);
 		
 		return mod_util.createModuleContainer(options);
 	};
-	
+
 	return {
 		init: init
 	}
