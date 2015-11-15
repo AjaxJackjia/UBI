@@ -68,7 +68,7 @@ define(['jquery', 'common/util'], function($, util) {
 		
 		$subModule.append(table_tpl);
 		
-		$subModule.append('<p class="title-style">图1 Pring Model优惠趋势图</p>');
+		//$subModule.append('<p class="title-style">图1 Pring Model优惠趋势图</p>');
 		$subModule.append(image("res/images/simulation/pricing_model.png"));
 		$subModule.append('<p>分析：车辆是由各种零部件组成的一个组合体，其运行是一个复杂的、千变万化的过程，车辆的技术状况会在运行过程中不断发生变化，随着形势里程的增加，各零部件的磨损、腐蚀和老化程度也会越来越严重，从而导致各零部件配合出现偏差，车况也也越来越差，交通事故率也会同步上升。通过查找文献资料数据，建立交通事故损失额与里程数的均衡关系模型，得出里程数每增加1%，交通事故损失额将增加5.41%。具体关系如图2所示。</p>');
 		

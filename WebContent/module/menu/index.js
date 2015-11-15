@@ -2,7 +2,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 	//load css file
 	util.loadcss('res/css/menu.css');
 	
-	var _appTitle = 'UBI 模拟系统';
+	var _appTitle = 'UBI 沙盘推演系统';
 	var _$menu = null;
 	
 	/*
@@ -172,10 +172,10 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			//tile classes
 			tileSize: "tile", 
 			bgColor: "bg-yellow",     
-			fgColor: "fg-white", 
+			fgColor: "fg-black", 
 
 			//tile content
-			tileLabel: " ",
+			tileLabel: "服务团队",
 			tileContent: "image",
 			imageStyle: "image",
 			imageUrl: "res/images/menu/prof_jlzhao.jpg",
@@ -188,22 +188,43 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 		
 		$tileGroupContainer_intro.append(tileUtil.createTile({
 			//tile classes
-			tileSize: "tile-wide", 
+			tileSize: "tile", 
 			bgColor: "bg-green",     
-			fgColor: "fg-white", 
+			fgColor: "fg-black", 
 
 			//tile content
-			tileLabel: "UBI项目简介",
+			tileLabel: "UBI介绍",
 			tileContent: "image",
 			imageStyle: "slideCover",
 			imageUrl: "res/images/menu/ubi_cover.jpg",
-			coverText: "UBI就是Usage Based Insurance，基于驾驶行为而定保费的保险，保费取决于驾驶时间、地点、驾驶方式等综合指标考量，为记录驾驶员的上述行为并关联理赔金额，参加UBI的车主都会在车上安装UBI车载智能盒子。", 
+			coverText: "UBI就是Usage Based Insurance，基于驾驶行为而定保费的保险。", 
 			coverColor: "op-lightOrange", 
 			slideDirection: "slide-up",
 				
 			//click
 			clickFunc: function() {
 				location.href="index.html?module=introduction&tab=1";
+			}
+		}));
+		
+		$tileGroupContainer_intro.append(tileUtil.createTile({
+			//tile classes
+			tileSize: "tile", 
+			bgColor: "bg-green",     
+			fgColor: "fg-black", 
+
+			//tile content
+			tileLabel: "至高通信",
+			tileContent: "image",
+			imageStyle: "slideCover",
+			imageUrl: "res/images/menu/zhigao2.jpg",
+			coverText: "至高通信是国内领先的行业移动信息化解决方案提供商。", 
+			coverColor: "op-lightOrange", 
+			slideDirection: "slide-up",
+				
+			//click
+			clickFunc: function() {
+				//location.href="index.html?module=introduction&tab=1";
 			}
 		}));
 		
@@ -229,7 +250,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "演讲",
+			tileLabel: "观看演示",
 			tileContent: "icon",
 			iconName: "mif-display", 
 				
@@ -246,7 +267,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "问答",
+			tileLabel: "我要提问",
 			tileContent: "icon",
 			iconName: "mif-bubbles", 
 				
@@ -261,7 +282,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 		 * */
 		var $tileGroup_simu = $('<div class="tile-group double">');
 		var $groupTitle_simu = $('<span class="tile-group-title">');
-		$groupTitle_simu.html('Simulation');
+		$groupTitle_simu.html('系统模拟');
 		var $tileGroupContainer_simu = $('<div class="tile-container">');
 		
 		$tileGroup_simu.append($groupTitle_simu);
@@ -376,9 +397,9 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "案例 #1",
+			tileLabel: "赔付预测",
 			tileContent: "icon",
-			iconName: "mif-paper-plane",
+			iconName: "mif-chart-bars2",
 				
 			//click
 			clickFunc: function() {
@@ -393,7 +414,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "案例 #2",
+			tileLabel: "案例 #1",
 			tileContent: "icon",
 			iconName: "mif-drive-eta",
 			
@@ -410,7 +431,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "案例 #3",
+			tileLabel: "案例 #2",
 			tileContent: "icon",
 			iconName: "mif-location",
 				
@@ -425,7 +446,7 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 		 * */
 		var $tileGroup_instruction= $('<div class="tile-group double">');
 		var $groupTitle_instruction = $('<span class="tile-group-title">');
-		$groupTitle_instruction.html('UBI使用说明');
+		$groupTitle_instruction.html('UBI申请');
 		var $tileGroupContainer_instruction = $('<div class="tile-container">');
 		
 		$tileGroup_instruction.append($groupTitle_instruction);
@@ -459,9 +480,26 @@ define(['jquery', 'metro', 'common/util', 'common/tile_util'], function($, metro
 			fgColor: "fg-white", 
 
 			//tile content
-			tileLabel: "使用方式",
+			tileLabel: "使用说明",
 			tileContent: "icon",
 			iconName: "mif-question",
+				
+			//click
+			clickFunc: function() {
+				location.href="index.html?module=analysis&tab=1";
+			}
+		}));
+		
+		$tileGroupContainer_instruction.append(tileUtil.createTile({
+			//tile classes
+			tileSize: "tile-wide", 
+			bgColor: "bg-lightRed",     
+			fgColor: "fg-white", 
+
+			//tile content
+			tileLabel: "套餐推荐",
+			tileContent: "icon",
+			iconName: "mif-gift",
 				
 			//click
 			clickFunc: function() {

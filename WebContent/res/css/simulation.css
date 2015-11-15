@@ -125,4 +125,43 @@
 	font-weight: 600;
 }
 
+.simulation .row > .content > .sub-module > .tabs
+{
+	margin: 0;
+	padding: 0;
+	margin-top: 20px; 
+	width: 100%;
+	list-style: none;
+	border-bottom: 1px solid #ddd;
+}
+
+.simulation .row > .content > .sub-module > .tabs > .tab
+{
+	display: inline-block;
+	width: 150px;
+	height: 40px;
+	padding: 10px 0;
+	text-align: center; 
+	cursor: pointer;
+}
+
+.simulation .row > .content > .sub-module > .tabs > .tab:hover
+{
+	color: #16499a;
+	border-bottom: 4px solid #16499a;
+}
+
+.simulation .row > .content > .sub-module > .tabs > .tab.active
+{
+	border-bottom: 4px solid #16499a;
+}
+
+.simulation .row > .content > .sub-module > .tabs-content
+{
+	width: 100%;
+	height: 200px;
+}
+
+
+
 
